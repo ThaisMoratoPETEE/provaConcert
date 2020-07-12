@@ -54,6 +54,7 @@ export class ProdutoUpdateComponent implements OnInit {
   
   goToProd(){
 	  this.router.navigate(['/produto']);
+	  this.productService.showMessage('Operação cancelada.', 3000);
   }
 
 }

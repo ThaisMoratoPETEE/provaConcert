@@ -63,6 +63,7 @@ export class ProdutoCadastroComponent implements OnInit {
   
   goToProd(){
 	  this.router.navigate(['/produto']);
+	  this.productService.showMessage('Operação cancelada.', 3000);
   }
   
   getMessage(msg: string){
