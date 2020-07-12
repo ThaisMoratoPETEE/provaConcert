@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 //meus arquivos
 import { HeaderComponent } from './components/template/header/header.component';
 import { FooterComponent } from './components/template/footer/footer.component';
@@ -15,6 +16,12 @@ import { ClientUpdateComponent } from './views/client-update/client-update.compo
 import { ClientDeleteComponent } from './views/client-delete/client-delete.component';
 import { LoginComponent } from './views/login/login.component';
 import { AuthService } from './views/login/auth.service';
+import { ProdutoCadastroComponent } from './views/produto-cadastro/produto-cadastro.component';
+import { ProdutoReadComponent } from './views/produto-read/produto-read.component';
+import { ProdutoUpdateComponent } from './views/produto-update/produto-update.component';
+import { ProdutoDeleteComponent } from './views/produto-delete/produto-delete.component';
+import { LoadingComponent } from './components/template/loading/loading.component';
+
 //arquivos externos
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -23,6 +30,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 //formulario
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -34,10 +43,6 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { FormLimpoComponent } from './components/form-limpo/form-limpo.component';
-import { ProdutoCadastroComponent } from './views/produto-cadastro/produto-cadastro.component';
-import { ProdutoReadComponent } from './views/produto-read/produto-read.component';
-import { ProdutoUpdateComponent } from './views/produto-update/produto-update.component';
-import { ProdutoDeleteComponent } from './views/produto-delete/produto-delete.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +60,8 @@ import { ProdutoDeleteComponent } from './views/produto-delete/produto-delete.co
     ProdutoCadastroComponent,
     ProdutoReadComponent,
     ProdutoUpdateComponent,
-    ProdutoDeleteComponent
+    ProdutoDeleteComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +83,8 @@ import { ProdutoDeleteComponent } from './views/produto-delete/produto-delete.co
 	MatTableModule,
 	MatNativeDateModule,
 	MatDatepickerModule,
-	ReactiveFormsModule
+	ReactiveFormsModule,
+	MatProgressSpinnerModule
   ],
   providers: [
   MatDatepickerModule,

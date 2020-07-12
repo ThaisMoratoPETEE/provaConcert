@@ -7,6 +7,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {LoadingService} from './../../components/template/loading/loading.service'
+import {LoadingComponent} from './../../components/template/loading/loading.component'
 
 @Component({
   selector: 'app-produto-delete',
@@ -25,7 +27,7 @@ export class ProdutoDeleteComponent implements OnInit {
 	quant: null
   }
   
-  constructor(private router: Router, private route: ActivatedRoute, private productService: ProductService) { }
+  constructor(private router: Router, private route: ActivatedRoute, private productService: ProductService, public loadingService: LoadingService) { }
 
   ngOnInit(): void {
 	  const id = this.route.snapshot.paramMap.get('id')
@@ -38,6 +40,8 @@ export class ProdutoDeleteComponent implements OnInit {
 		  this.productForm.controls['name'].disable();
 		  this.productForm.controls['quant'].disable();
 	  })
+	  
+	  this.loadingService.carregarPg();
   }
   
   deleteProd(): void{

@@ -1,4 +1,5 @@
-<mat-card class="primary mat-elevation-z8">
+<app-loading *ngIf="loadingService.mostrarLoading"></app-loading>
+<mat-card *ngIf="!loadingService.mostrarLoading" class="primary mat-elevation-z8">
 	<mat-card-title>Insira os dados do produto comprado</mat-card-title>
 	<mat-card-subtitle>Tarefa: Crie um CRUD, com quantos campos quiser, usando RactiveForms, aplique validações em alguns dos campos.</mat-card-subtitle>
 	<mat-card-subtitle>O input "Produto" não pode estar vazio e "Quantidade" tem valor mínimo de 1.</mat-card-subtitle>

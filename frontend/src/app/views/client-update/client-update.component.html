@@ -1,4 +1,5 @@
-<mat-card class="primary mat-elevation-z8">
+<app-loading *ngIf="loadingService.mostrarLoading"></app-loading>
+<mat-card *ngIf="!loadingService.mostrarLoading" class="primary mat-elevation-z8">
 	<mat-card-title>Alterar cadastro</mat-card-title>
 	<form class="myform">
 		<!--Nome-->

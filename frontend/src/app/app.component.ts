@@ -8,7 +8,7 @@ import { AuthService } from './views/login/auth.service';
 })
 export class AppComponent {
 	mostrarConteudo: boolean = false;
-	
+
 	constructor(private authService: AuthService){
 		
 	}
@@ -18,4 +18,5 @@ export class AppComponent {
 			validacao => this.mostrarConteudo = validacao
 		);
 	}
+	
 }
