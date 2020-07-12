@@ -1,5 +1,6 @@
 # provaConcert
-Prova da Concert Technologies: avaliação desenvolvimento
+## Prova da Concert Technologies: avaliação desenvolvimento
+### Por: Thais Ávila Morato
 
 - Abra um terminal e entre na pasta _frontend_.
 - Execute o comando _npm install_.
