@@ -1,0 +1,54 @@
+<mat-card class="primary mat-elevation-z8">
+	<mat-card-title>Insira os dados do novo cliente</mat-card-title>
+	<mat-card-subtitle>Tarefa: Crie um CRUD com ao menos 6 campos, e obrigatoriamente precisa ter: “select”, “checkbox”, “radio”, “date”.</mat-card-subtitle>
+	<mat-card-subtitle>As outras funcionalidades do CRUD podem ser acessadas na aba "Clientes" no menu lateral.</mat-card-subtitle>
+	<form class="myform">
+		<!--Nome-->
+		<div>
+		<mat-form-field>
+			<mat-label>Nome</mat-label>
+			<input [(ngModel)]="client.name" matInput name="name">
+		</mat-form-field>
+		<!--Idade-->
+		<mat-form-field class="idade">
+			<mat-label>Idade</mat-label>
+			<input [(ngModel)]="client.age" matInput name="age">
+		</mat-form-field>
+		</div>
+		<!--Validade-->
+		<mat-form-field class="validade">
+		  <mat-label>Data de validade do cadastro</mat-label>
+		  <input [(ngModel)]="client.date" name="date" matInput [matDatepicker]="picker">
+		  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+		  <mat-datepicker #picker></mat-datepicker>
+		</mat-form-field>
+		<!--Sexo-->
+		<mat-form-field class="sexo">
+		  <mat-label>Sexo</mat-label>
+		  <mat-select [(ngModel)]="client.sex" name="sex">
+			<mat-option value="Masculino">Masculino</mat-option>
+			<mat-option value="Feminino">Feminino</mat-option>
+			<mat-option value="Não binário">Não binário</mat-option>
+		  </mat-select>
+		</mat-form-field>
+		<!--PCD-->
+		<div style="height: 15px"></div>
+		<section>
+		  <mat-checkbox [(ngModel)]="client.pcd" name="pcd">Pessoa com deficiência (PCD)</mat-checkbox>
+		</section>
+		<div style="height: 20px"></div>
+		<!--Email-->
+		<mat-radio-group [(ngModel)]="client.email" name="email">
+		  <mat-radio-button value="Sim">Cliente deseja receber promoções no email</mat-radio-button>
+		  <div style="height: 8px"></div>
+		  <mat-radio-button value="Não">Cliente não deseja receber promoções no email</mat-radio-button>
+		</mat-radio-group>
+		<br>
+		<!--Botoes-->
+		<button class="salvar" (click)="createClient()" mat-raised-button>Cadastrar</button>
+		<button class="cancelar" (click)="limpar()"  mat-raised-button>Limpar campos</button>
+		<p><b>OUTPUT: </b>{{confirmacao}}</p>
+	</form>
+</mat-card>
+<!--Confirmacao de que formulário foi limpo-->
+<app-form-limpo [limpouFormulario]="limpou" (informar)="getMessage($event)"></app-form-limpo>

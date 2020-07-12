@@ -1,0 +1,19 @@
+<mat-card class="login mat-elevation-z8">
+	<mat-card-title>Login</mat-card-title>
+	<mat-card-subtitle>Crie uma página de Login (sem autenticação no backend). Defina um login e senha estáticos (login: concert, senha: prova).</mat-card-subtitle>
+	<form class="myform">
+		<!--Usuário-->
+		<mat-form-field>
+			<mat-label>Usuário</mat-label>
+			<input [(ngModel)]="user.name" matInput name="name">
+		</mat-form-field>
+		<!--Senha-->
+		<mat-form-field>
+			<mat-label>Senha</mat-label>
+			<input [(ngModel)]="user.pw" matInput name="pw" type="password">
+		</mat-form-field>
+		<br>
+		<!--Botoes-->
+		<button class="salvar" (click)="fazerLogin()" mat-raised-button>Autenticar</button>
+	</form>
+</mat-card>

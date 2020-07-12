@@ -1,0 +1,31 @@
+<mat-card class="tabela mat-elevation-z8">
+	<mat-card-title>Clientes cadastrados</mat-card-title>
+	<table>
+		<!-- coluna nome -->
+		<tr class="cabecalho">
+			<th>Nome</th>
+			<th>Idade</th>
+			<th>Cadastro válido até</th>
+			<th>Sexo</th>
+			<th>PCD</th>
+			<th>Receber email</th>
+			<th>Opções</th>
+		</tr>
+		<tr *ngFor="let client of clients" class="texto-light">
+			<th scope="row">{{client.name}}</th>
+			<th scope="row">{{client.age}}</th>
+			<th scope="row">{{client.date | date: 'dd/MM/yy'}}</th>
+			<th scope="row">{{client.sex}}</th>
+			<th scope="row">{{client.pcd}}</th>
+			<th scope="row">{{client.email}}</th>
+			<th>
+				<a routerLink="cadastrar/editar/{{client.id}}">
+				  <i class="material-icons">edit</i>
+				</a>
+				<a routerLink="cadastrar/deletar/{{client.id}}">
+				  <i class="material-icons">delete</i>
+				</a>
+			</th>
+		</tr>
+	</table>
+</mat-card>

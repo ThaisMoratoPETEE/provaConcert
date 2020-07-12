@@ -1,0 +1,24 @@
+<p>produto-update works! ID: {{product.id}}</p> 
+<mat-card class="primary mat-elevation-z8">
+	<mat-card-title>Insira os dados do produto comprado</mat-card-title>
+	<mat-card-subtitle>Tarefa: Crie um CRUD, com quantos campos quiser, usando RactiveForms, aplique validações em alguns dos campos.</mat-card-subtitle>
+	<mat-card-subtitle>O input "Produto" não pode estar vazio e "Quantidade" tem valor mínimo de 1.</mat-card-subtitle>
+	<form class="myform" [formGroup]="productForm">
+		<!--Produto-->
+		<mat-form-field>
+			<mat-label>Produto*</mat-label>
+			<input matInput formControlName="name" name="name">
+		</mat-form-field>
+		<br><p style="color: gray; padding: 0px; margin-top: 0px">* Preenchimento obrigatório.</p>
+		<!--Quantidade-->
+		<mat-form-field class="quantidade" style="padding: 0px;  margin-bottom: 0px">
+			<mat-label>Quantidade**</mat-label>
+			<input matInput formControlName="quant" name="quant">
+		</mat-form-field>
+		<br><p style="color: gray; padding: 0px; margin-top: 0px; margin-bottom: 0px">** Preenchimento obrigatório. Valor mínimo: 1.</p>
+		<br>
+		<!--Botoes-->
+		<button class="salvar" (click)="editProd()" mat-raised-button>Salvar</button>
+		<button class="cancelar" (click)="goToProd()" mat-raised-button>Cancelar</button>
+	</form>
+</mat-card>

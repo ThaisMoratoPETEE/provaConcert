@@ -1,0 +1,24 @@
+<mat-card class="tabela mat-elevation-z8">
+	<mat-card-title>Produtos cadastrados</mat-card-title>
+	<table>
+		<!-- coluna nome -->
+		<tr class="cabecalho">
+			<th>Nome</th>
+			<th>Quantidade</th>
+			<th>Opções</th>
+		</tr>
+		<tr *ngFor="let product of products" class="texto-light">
+			<th scope="row">{{product.name}}</th>
+			<th scope="row">{{product.quant}}</th>
+			<th>
+				<a routerLink="editar/{{product.id}}">
+				  <i class="material-icons">edit</i>
+				</a>
+				<a routerLink="deletar/{{product.id}}">
+				  <i class="material-icons">delete</i>
+				</a>
+			</th>
+		</tr>
+	</table>
+	<button class="salvar" (click)="addNewProd()" mat-raised-button><i style="margin-right: 8px" class="material-icons">queue</i>Cadastrar produto</button>
+</mat-card>
