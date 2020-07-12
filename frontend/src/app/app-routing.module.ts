@@ -20,10 +20,10 @@ const routes: Routes = [{
 	path: "cadastrar",
 	component: CadastrarComponent
 	},
-	{
+	/*{
 	path: "mapa",
 	component: MapaComponent
-	},
+	},*/
 	{
 	path: "cadastrar/editar/:id",
 	component: ClientUpdateComponent
