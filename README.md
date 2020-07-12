@@ -10,4 +10,4 @@
 - Execute o comando _npm install_.
 - Execute o comando _npm start_.
 
-- Em um navegador, vá para http://localhost:4200/ .
+- Abra seu navegador e vá para http://localhost:4200/ .
