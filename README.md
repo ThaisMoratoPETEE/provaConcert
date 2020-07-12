@@ -28,6 +28,8 @@
 
 - [x] Crie um componente para ser utilizado nos dois CRUD criado anteriormente. Esse componente precisa obrigatoriamente ter um Input e Output property.
 
+> Tanto no cadastro de clientes quanto no cadastro de produtos, foi adicionado um componente com Input e Output que interage por meio dos botões "Limpar campos" e "Mandar texto". O resultado pode ser visto pela alteração do texto em "**INPUT:**" e "**OUTPUT:**".
+
 - [x] Crie uma página OU um sidebar para navegar entre os componentes.
 
 > Para esse projeto, foi escolhido o sidebar.
@@ -40,7 +42,7 @@
 
 - [ ] Aplique “Lazy Load” nas rotas de navegação.
 
-> Pela minha pesquisa, o projeto precisaria de ser organizado de outra maneira para que a aplicação de "Lazy Load" fosse possível.
+> Pela minha pesquisa, o projeto precisaria de ser organizado de outra maneira para que a aplicação de "Lazy Load" fosse possível. Pelo limite de tempo, a funcionalidade acabou não sendo implementada.
 
 - [ ] Tarefa Bônus (Não é obrigatório fazer) : Crie um componente de mapa, plotando um marcador, linhas, polígono, e um quadrado.
 
