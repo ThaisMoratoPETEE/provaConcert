@@ -1,4 +1,5 @@
-<mat-card class="tabela mat-elevation-z8">
+<app-loading *ngIf="loadingService.mostrarLoading"></app-loading>
+<mat-card *ngIf="!loadingService.mostrarLoading" class="tabela mat-elevation-z8">
 	<mat-card-title>Produtos cadastrados</mat-card-title>
 	<table>
 		<!-- coluna nome -->

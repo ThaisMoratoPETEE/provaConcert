@@ -1,4 +1,5 @@
-<mat-card class="primary mat-elevation-z8">
+<app-loading *ngIf="loadingService.mostrarLoading"></app-loading>
+<mat-card *ngIf="!loadingService.mostrarLoading" class="primary mat-elevation-z8">
 	<mat-card-title>Insira os dados do novo cliente</mat-card-title>
 	<mat-card-subtitle>Tarefa: Crie um CRUD com ao menos 6 campos, e obrigatoriamente precisa ter: “select”, “checkbox”, “radio”, “date”.</mat-card-subtitle>
 	<mat-card-subtitle>As outras funcionalidades do CRUD podem ser acessadas na aba "Clientes" no menu lateral.</mat-card-subtitle>
@@ -51,4 +52,4 @@
 	</form>
 </mat-card>
 <!--Confirmacao de que formulário foi limpo-->
-<app-form-limpo [limpouFormulario]="limpou" (informar)="getMessage($event)"></app-form-limpo>
+<app-form-limpo *ngIf="!loadingService.mostrarLoading" [limpouFormulario]="limpou" (informar)="getMessage($event)"></app-form-limpo>

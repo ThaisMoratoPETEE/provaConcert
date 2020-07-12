@@ -8,6 +8,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router'
 import { FormLimpoComponent } from './../../components/form-limpo/form-limpo.component';
+import {LoadingService} from './../../components/template/loading/loading.service'
+import {LoadingComponent} from './../../components/template/loading/loading.component'
 
 @Component({
   selector: 'app-produto-cadastro',
@@ -26,13 +28,13 @@ export class ProdutoCadastroComponent implements OnInit {
 	  quant: null
   }
   
-  constructor(private router: Router, private productService: ProductService) { }
+  constructor(private router: Router, private productService: ProductService, public loadingService: LoadingService) { }
   
   limpou: boolean = null;
   confirmacao: string = '';
   
   ngOnInit(): void {
-	  
+	  this.loadingService.carregarPg();
   }
   
   cadastrarProduto(){

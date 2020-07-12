@@ -13,6 +13,8 @@ import {MatNativeDateModule} from '@angular/material/core'
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
 import { FormLimpoComponent } from './../../components/form-limpo/form-limpo.component';
+import {LoadingService} from './../../components/template/loading/loading.service'
+import {LoadingComponent} from './../../components/template/loading/loading.component'
 
 @Component({
   selector: 'app-cadastrar',
@@ -30,19 +32,20 @@ export class CadastrarComponent implements OnInit {
 	  email: 'Sim'
   }
   
-  constructor(private clientService: ClientService, private router: Router) { }
+  constructor(private clientService: ClientService, private router: Router, public loadingService: LoadingService) { }
   
   limpou: boolean = null;
   confirmacao: string = '';
-  
+
   ngOnInit(): void {
+	  this.loadingService.carregarPg();
   }
   
   createClient(): void{
 	  this.clientService.create(this.client).subscribe(() => {
 		  
-		  this.clientService.showMessage('Cliente cadastrado com sucesso.')
-		  this.router.navigate(['/'])
+		  this.clientService.showMessage('Cliente cadastrado com sucesso.');
+		  this.router.navigate(['/']);
 	  })
   }
   

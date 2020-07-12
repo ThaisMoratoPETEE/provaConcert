@@ -12,7 +12,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatNativeDateModule} from '@angular/material/core'
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
-
+import {LoadingService} from './../../components/template/loading/loading.service'
+import {LoadingComponent} from './../../components/template/loading/loading.component'
 @Component({
   selector: 'app-client-delete',
   templateUrl: './client-delete.component.html',
@@ -29,13 +30,15 @@ export class ClientDeleteComponent implements OnInit {
 	email: ''
   }
   
-  constructor(private clientService: ClientService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private clientService: ClientService, private router: Router, private route: ActivatedRoute, public loadingService: LoadingService) { }
 
   ngOnInit(): void {
 	  const id = this.route.snapshot.paramMap.get('id')
 	  this.clientService.getById(id).subscribe(client => {
 		  this.client = client;
 	  })
+	  
+	  this.loadingService.carregarPg();
   }
 
   
